@@ -57,7 +57,7 @@ del knownIDs[0] # first element is the header
 print knownIDs
 
 # fuelTypes = ["Coal", "Gas", "Oil", "Hydro", "Geothermal", "Nuclear", "Solar_PV", "Solar_Thermal", "Waste", "Wind"]
-fuelTypes = ["Oil"]
+fuelTypes = ["Oil_Ports"]
 
 for fuelType in fuelTypes:
 #     fuelTypeURL = "http://globalenergyobservatory.org/list.php?db=PowerPlants&type=" + fuelType

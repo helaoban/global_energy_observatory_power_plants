@@ -69,7 +69,7 @@ for fuelType in fuelTypes:
     links = root.xpath("//tr[@class='odd_perf' or @class='even_perf']/td[1]/a/@href")
     for link in links:
 
-        plantID = link.replace("geoid/", "")
+#         plantID = link.replace("geoid/", "")
 
         plantURL = "http://globalenergyobservatory.org/" + link
 

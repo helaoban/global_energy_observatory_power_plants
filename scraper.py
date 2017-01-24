@@ -56,10 +56,12 @@ knownIDs = knownIDs.split("\r\n")
 del knownIDs[0] # first element is the header
 print knownIDs
 
-fuelTypes = ["Coal", "Gas", "Oil", "Hydro", "Geothermal", "Nuclear", "Solar_PV", "Solar_Thermal", "Waste", "Wind"]
+# fuelTypes = ["Coal", "Gas", "Oil", "Hydro", "Geothermal", "Nuclear", "Solar_PV", "Solar_Thermal", "Waste", "Wind"]
+fuelTypes = ["Oil"]
 
 for fuelType in fuelTypes:
-    fuelTypeURL = "http://globalenergyobservatory.org/list.php?db=PowerPlants&type=" + fuelType
+#     fuelTypeURL = "http://globalenergyobservatory.org/list.php?db=PowerPlants&type=" + fuelType
+    fuelTypeURL = "http://globalenergyobservatory.org/list.php?db=Transmission&type=" + fuelType
     print fuelTypeURL
     html = scraperwiki.scrape(fuelTypeURL)
     root = lxml.html.fromstring(html)

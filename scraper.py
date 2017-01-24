@@ -48,7 +48,7 @@ def makeNiceKey(value):
             value = value.replace('__', '_')
         return value
 
-scraperwiki.sqlite.execute("CREATE TABLE IF NOT EXISTS powerplants (Name TEXT, Type TEXT, Country TEXT, State TEXT, Type_of_Plant_rng1 TEXT, Type_of_Fuel_rng1_Primary TEXT, Type_of_Fuel_rng2_Secondary TEXT, Design_Capacity_MWe_nbr NUMBER)")
+scraperwiki.sqlite.execute("CREATE TABLE IF NOT EXISTS oilports (Name TEXT, Type TEXT, Country TEXT, State TEXT, Type_of_Plant_rng1 TEXT, Type_of_Fuel_rng1_Primary TEXT, Type_of_Fuel_rng2_Secondary TEXT, Design_Capacity_MWe_nbr NUMBER)")
 
 # figure out what's already been downloaded
 knownIDs = scraperwiki.scrape("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=csv&name=global_energy_observatory_power_plants&query=select%20distinct%20replace(CurrentPage_sys%2C%20'%2Fgeoid%2F'%2C%20'')%20as%20id%20from%20%60powerplants%60")
@@ -123,7 +123,7 @@ for fuelType in fuelTypes:
 
             try:
                 #primary key is based on id
-                scraperwiki.sqlite.save(unique_keys=["GEO_Assigned_Identification_Number"], data=installationInfo, table_name="powerplants")
+                scraperwiki.sqlite.save(unique_keys=["GEO_Assigned_Identification_Number"], data=installationInfo, table_name="oilports")
                 if len(unitList) > 0:
                     scraperwiki.sqlite.save(unique_keys=["GEO_Assigned_Identification_Number","Unit_Nbr"], data=unitList, table_name="ppl_units")
             except:
